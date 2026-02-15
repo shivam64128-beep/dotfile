@@ -13,6 +13,6 @@ alias tm='tmux new-session -A -s main'
 alias tx='tmux kill-server'
 set -o vi
 
-# if [ -z "$TMUX" ]; then
-#     tmux new-session -A -s main
-# fi
+if [ -z "$TMUX" ]; then
+    tmux new-session -A -s main
+fi
