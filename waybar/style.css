@@ -1,14 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
-@define-color background rgba(0, 0, 0, 0);
-@define-color waybarBg rgba(38,38,38,0.3);
-
-#waybar {
-  background-color: @waybarBg;
-}
-
 * {
-  background-color: @background;
+  /* background-color: @background; */
   color: @foreground;
 
   border: none;
@@ -18,12 +11,21 @@
   font-size: 12px;
 }
 
-.modules-left {
-  margin-left: 8px;
+window#waybar {
+  background: transparent;
+  margin-top: 10px;
 }
 
-.modules-right {
-  margin-right: 8px;
+window#waybar.empty #window{
+  background: transparent;
+  color: transparent;
+  padding: 0;
+  margin-left: 5;
+  transition: .5s;
+}
+
+mpris.empty {
+  background: transparent;
 }
 
 #workspaces button {
@@ -37,30 +39,27 @@
   opacity: 0.5;
 }
 
-#cpu,
 #battery,
+#network,
+#bluetooth,
 #pulseaudio,
-#custom-omarchy,
 #custom-screenrecording-indicator,
 #custom-update {
+  background-color: @background;
   min-width: 12px;
-  margin: 0 7.5px;
-}
 
-#tray {
-  margin-right: 16px;
+  border-radius: 0px;
+  padding: 0 5px;
+  margin: 0 0 0 0;
 }
-
 #bluetooth {
-  margin-right: 17px;
+  border-radius: 10 0 0 10px;
+  padding: 0 5 0 10;
 }
 
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
+#battery {
+  border-radius: 0 10 10 0px;
+  padding: 0 10 0 0;
 }
 
 tooltip {
@@ -72,7 +71,10 @@ tooltip {
 }
 
 #clock {
-  margin-left: 8.75px;
+  background-color: @background;
+
+  border-radius: 10px;
+  padding: 0 10 0 10;
 }
 
 .hidden {
@@ -81,20 +83,29 @@ tooltip {
 
 #custom-screenrecording-indicator {
   min-width: 12px;
-  margin-left: 5px;
+  margin-left: 8.75px;
   font-size: 10px;
-  padding-bottom: 1px;
+
+  padding: 0 11 0 10;
 }
 
 #custom-screenrecording-indicator.active {
   color: #a55555;
 }
 
-#custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 7.5px;
+
+/* EXTRA FIX! */
+#workspaces {
+  background-color: @background;
+  border-radius: 10px;
+  margin-left: 0px;
+  padding: 0 5 0 5;
 }
 
-#custom-voxtype.recording {
-  color: #a55555;
+#pulseaudio {
+  padding: 0 13 0 10;
+}
+
+tooltip {
+  border-radius: 10px;
 }
