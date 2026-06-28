@@ -5,14 +5,23 @@
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
+set -o vi
+
 # Add your own exports, aliases, and functions here.
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
-alias tm='tmux new-session -A -s main'
-alias tx='tmux kill-server'
-set -o vi
+y() {
+    yazi "$@"
+}
+bind -x '"\C-f": y'
 
-if [ -z "$TMUX" ]; then
-    tmux new-session -A -s main
-fi
+b() {
+    bluetui "$@"
+}
+bind -x '"\C-b": b'
+
+a() {
+    wiremix "$@"
+}
+bind -x '"\C-a": a'
