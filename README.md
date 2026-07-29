@@ -1,1 +1,1 @@
-i use arch btw
+old config's
